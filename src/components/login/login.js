@@ -24,7 +24,7 @@ export default function LoginForm() {
     };
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/user/login', requestData);
+      const response = await axios.post('https://eventoappbackend.onrender.com/user/login', requestData);
       setError(''); // Limpiar el error si la solicitud es exitosa
       const userData = response.data.user; // Obtener los datos del usuario de la respuesta
       localStorage.setItem('user', JSON.stringify(userData)); // Almacenar el usuario en localStorage

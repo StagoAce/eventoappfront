@@ -35,7 +35,7 @@ const CreateEventForm = ({ producerId }) => {
     }
 
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/evento/add/${producerId}`, formData);
+      const response = await axios.post(`https://eventoappbackend.onrender.com/evento/add/${producerId}`, formData);
       setSnackbarMessage(response.data.message || 'Evento creado con éxito');
       setSnackbarSeverity('success');
 

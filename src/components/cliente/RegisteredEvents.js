@@ -26,7 +26,7 @@ const RegisteredEvents = ({ user }) => {
   const fetchRegisteredEvents = async () => {
     if (user && user.cedula) {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/user/eventos/${user.cedula}`);
+        const response = await axios.get(`https://eventoappbackend.onrender.com/user/eventos/${user.cedula}`);
         setRegisteredEvents(Array.isArray(response.data) ? response.data : []);
       } catch (err) {
         setError(err);
@@ -47,7 +47,7 @@ const RegisteredEvents = ({ user }) => {
   const handleUnsubscribe = async (eventId) => {
     try {
       const userCedula = user.cedula; 
-      const response = await axios.post(`http://127.0.0.1:8000/user/unsubscribe/${userCedula}`, {
+      const response = await axios.post(`https://eventoappbackend.onrender.com/user/unsubscribe/${userCedula}`, {
         id_evento: eventId,
       });
       setSnackbarMessage(response.data.message);

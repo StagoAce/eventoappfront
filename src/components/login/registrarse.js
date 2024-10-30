@@ -21,7 +21,7 @@ export default function RegisterForm() {
     };
 
     try {
-        const response = await axios.post('http://127.0.0.1:8000/user/add/', requestData);
+        const response = await axios.post('https://eventoappbackend.onrender.com/user/add/', requestData);
         console.log('Respuesta del servidor:', response.data);
         // Aquí puedes manejar la respuesta, como redirigir al usuario o mostrar un mensaje de éxito
     } catch (error) {

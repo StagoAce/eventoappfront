@@ -29,7 +29,7 @@ const AllEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/evento/all/');
+        const response = await axios.get('https://eventoappbackend.onrender.com/evento/all/');
         setEvents(response.data);
       } catch (err) {
         setError(err);
@@ -43,7 +43,7 @@ const AllEvents = () => {
 
   const handleRegister = async (eventId) => {
     try {
-       const response = await axios.post(`http://127.0.0.1:8000/user/subscribe/${user?.cedula}`, {
+       const response = await axios.post(`https://eventoappbackend.onrender.com/user/subscribe/${user?.cedula}`, {
         id_evento: eventId,
       });
       setSnackbarMessage(response.data.message);

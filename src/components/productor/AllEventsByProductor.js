@@ -27,7 +27,7 @@ const ProducerEvents = ({ producerId }) => {
   useEffect(() => {
     const fetchProducerEvents = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/evento/producer/${producerId}`);
+        const response = await axios.get(`https://eventoappbackend.onrender.com/evento/producer/${producerId}`);
         setEvents(response.data);
       } catch (err) {
         setError(err);
